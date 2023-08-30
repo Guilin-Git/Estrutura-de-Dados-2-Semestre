@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 ///////////////////////
-// Declaração do nó //
+// DeclaraÃ§Ã£o do nÃ³ //
 /////////////////////
 
 struct no{
@@ -14,13 +14,13 @@ struct no{
 };
 
 //////////////////////////////
-// Declaração de variaveis //
+// DeclaraÃ§Ã£o de variaveis //
 /////////////////////////////
 
 struct no *cabeca = NULL;
 
 /////////////////////////////////////
-// Função que inseri o nó na fila //
+// FunÃ§Ã£o que inseri o nÃ³ na fila //
 ////////////////////////////////////
 
 void inserir(int numero){
@@ -31,24 +31,24 @@ void inserir(int numero){
 }
 
 /////////////////////////////////////
-// Função que Remove um no da fila//
+// FunÃ§Ã£o que Remove um no da fila//
 ////////////////////////////////////
 
 int remover(){
 	int retorno = -1;
 	
 	if (cabeca != NULL){
-		// A FILA TEM UM NÓ
+		// A FILA TEM UM NÃ“
 		if (cabeca -> proximo == NULL){
 			retorno = cabeca -> numero;
 			free(cabeca);
 			cabeca = NULL;
 		}else{
-		// A FILA TEM MAIS DE 1 NÓ
+		// A FILA TEM MAIS DE 1 NÃ“
 		struct no *ponteiroAnterior = cabeca;
 	
 		
-		// Procura o penultimo nó da fila
+		// Procura o penultimo nÃ³ da fila
 		while (ponteiroAnterior -> proximo -> proximo !=NULL){
 			ponteiroAnterior = ponteiroAnterior -> proximo;
 		}
@@ -77,7 +77,7 @@ void imprimir (){
 
 
 //////////////////////////////////////////////
-// Função principal de execução do programa//
+// FunÃ§Ã£o principal de execuÃ§Ã£o do programa//
 /////////////////////////////////////////////
 
 int main(){
@@ -116,6 +116,7 @@ int main(){
 	
 
 }
+
 
 
 
