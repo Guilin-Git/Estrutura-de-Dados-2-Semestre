@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 ///////////////////////
-// Declaração do nó //
+// DeclaraÃ§Ã£o do nÃ³ //
 /////////////////////
 
 struct no{
@@ -15,13 +15,13 @@ struct no{
 };
 
 //////////////////////////////
-// Declaração de variaveis //
+// DeclaraÃ§Ã£o de variaveis //
 /////////////////////////////
 
 struct no *cabeca = NULL;
 
 /////////////////////////////////////
-// Função que inseri o nó na fila //
+// FunÃ§Ã£o que inseri o nÃ³ na fila //
 ////////////////////////////////////
 
 void push(int numero){
@@ -32,7 +32,7 @@ void push(int numero){
 }
 
 /////////////////////////////////////
-// Função que Remove um no da fila//
+// FunÃ§Ã£o que Remove um no da fila//
 ////////////////////////////////////
 
 int pop(){
@@ -50,13 +50,13 @@ int pop(){
 }
 
 //////////////////////////////////////////////
-// Função principal de execução do programa//
+// FunÃ§Ã£o principal de execuÃ§Ã£o do programa//
 /////////////////////////////////////////////
 int main(){
 	int opcao =0;
 	int numero = 0;
 	
-	while (opcao != 4){
+	while (opcao != 3){
 		printf("+=======================+\n");
 		printf("|     Menu de Opcoes    |\n");
 		printf("+=======================+\n");
