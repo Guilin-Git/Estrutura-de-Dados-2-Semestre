@@ -1,19 +1,16 @@
-////////////////////////////////////////////////
-// Programa que implementa uma matriz esparsa//
-///////////////////////////////////////////////
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 //////////////////////////////
-// Declaração de constante //
+// DeclaraÃ§Ã£o de constante //
 /////////////////////////////
 
 const int MODULO = 3;
 
 
 ///////////////////////
-// Declaração do nó //
+// DeclaraÃ§Ã£o do nÃ³ //
 /////////////////////
 
 struct no{
@@ -28,20 +25,20 @@ struct diretor{
 };
 
 //////////////////////////////
-// Declaração de variaveis //
+// DeclaraÃ§Ã£o de variaveis //
 /////////////////////////////
 
 struct diretor *cabeca = NULL;
 
 
 ////////////////////////////////////////
-// Função que procura o diretor certo//
+// FunÃ§Ã£o que procura o diretor certo//
 ///////////////////////////////////////
 
 struct diretor *proximoDiretor(int resto){
 	struct diretor *ponteiro = cabeca;
 	
-	// varrendo a lista até achar o resto certo ou chegar no final
+	// varrendo a lista atÃ© achar o resto certo ou chegar no final
 	while((ponteiro != NULL) && (ponteiro -> resto != resto)){
 		ponteiro = ponteiro -> proximoDiretor;
 		
@@ -61,7 +58,7 @@ struct diretor *proximoDiretor(int resto){
 }
 
 ///////////////////////////////////////////////
-// função que inseri um no na matriz esparsa//
+// funÃ§Ã£o que inseri um no na matriz esparsa//
 //////////////////////////////////////////////
 
 void inserir(int numero){
@@ -78,7 +75,7 @@ void inserir(int numero){
 }
 
 /////////////////////////////////////////
-// função que imprime a matriz esparsa//
+// funÃ§Ã£o que imprime a matriz esparsa//
 ////////////////////////////////////////
 void imprimir(){
 	struct diretor *ponteiroDiretor = cabeca;
@@ -100,7 +97,7 @@ void imprimir(){
 }
 
 //////////////////////////////////////////
-// função que remove um valor da matriz//
+// funÃ§Ã£o que remove um valor da matriz//
 /////////////////////////////////////////
 
 void remover(int numero){
@@ -136,43 +133,40 @@ void remover(int numero){
 
 
 //////////////////////////////////
-// função principal do programa//
+// funÃ§Ã£o principal do programa//
 /////////////////////////////////
 
-int main(){
-	int i = 0;
-	int numero =0;
-	char x;
-	time_t t;
-	
-	srand((unsigned) time(&t));
-	
-	for (i = 0; i < 10; i++){
-		inserir(rand());
-	}
-	
-	imprimir();
-	
-	while(x == 's'){
-		
-	printf("digite um numero para excluir:  ");
-	scanf("%d", &numero);
-	
-	remover(numero);
-	
-	imprimir();
-	printf("deseja continuar excluindo ? s/n \n");
-	scanf("%c", &x);
-	if(x == 'n'){
-		break;
-	}
-		
-	}
+int main() {
+    int i = 0;
+    int numero = 0;
+    char x;
+    time_t t;
 
+    srand((unsigned)time(&t));
+
+    for (i = 0; i < 10; i++) {
+        inserir(rand());
+    }
+
+    imprimir();
+
+    do {
+        printf("Digite um nÃºmero para excluir: ");
+        scanf("%d", &numero);
+
+        remover(numero);
+
+        imprimir();
+        printf("Deseja continuar excluindo? (s/n) \n");
+        
+        // Limpeza do buffer de entrada para evitar problemas com a leitura do caractere 'x'
+        while (getchar() != '\n');
+
+        scanf("%c", &x);
+    } while (x == 's');
+
+    return 0;
 }
-
-
-
 
 
 
